@@ -8,11 +8,11 @@ Easy to Medium(1751,1741,1693,1393)
 
       Solution:
       
-        SELECT product_id
-        From Products
-        WHERE (low_fats = "Y" AND recyclable ="Y");
-                  // where注意打括号，引用字符要用引号
-                  // 语法结束要用分号
+            SELECT product_id
+            From Products
+            WHERE (low_fats = "Y" AND recyclable ="Y");
+                      // where注意打括号，引用字符要用引号
+                      // 语法结束要用分号
            
 2. 1741
 
