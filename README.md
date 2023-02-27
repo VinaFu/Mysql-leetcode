@@ -78,6 +78,31 @@ Easy to Medium(1751,1741,1693,1393)
                         // UNION 运算符用于组合两个或多个 SELECT 语句的结果集。最后一个不要UNION
                         // 因为终表剔除了null值，所以 WHERE store1/2/3 IS NOT NULL
 
+6. 176 Question: 选择第二大值
+
+      Solution:
       
+      6.1 MAX
+      
+            SELECT MAX(salary) AS SecondHighestSalary
+            FROM Employee
+            WHERE salary < (SELECT MAX(salary) FROM Employee);
+                        // 选择最大的一个 - MAX()
+                        // 然后选择比它小的那个，那是第二大的
+                        // 仅当我们选择第二个/第三个时才适用; 不适用于 n-th
+
+      6.2 DISTINCT && LIMIT
+      
+            SELECT
+            (SELECT DISTINCT salary 
+            FROM Employee 
+            ORDER BY salary 
+            DESC LIMIT 1, 1)
+            AS SecondHighestSalary;
+                        // 
+                        // 
+
+
+
 
 
