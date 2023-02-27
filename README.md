@@ -12,9 +12,7 @@ Easy to Medium(1751,1741,1693,1393)
                       // where注意打括号，引用字符要用引号
                       // 语法结束要用分号
            
-2. 1741
-
-      Question:
+2. 1741      Question:
       同样ID同一天的外出时间-内在时间；
       表格换名字
       
@@ -27,9 +25,7 @@ Easy to Medium(1751,1741,1693,1393)
                         // 同样参数用GROUP BY放在一起。
                         // 见12-13章内容
 
-3. 1693
-
-      Question:
+3. 1693      Question:
       建表命名，计数 + 不重复计数（null）；分别计数；排序
       
       Solution:
@@ -41,9 +37,7 @@ Easy to Medium(1751,1741,1693,1393)
                         // 计数：count；非重复： distinct; 用了distinct不能用count(*)
                         // 顺序：group > order
 
-4. 1393
-
-      Question:
+4. 1393      Question:
       建表命名, 数学用法. CASE 运行算法 (遇到“buy”转为负数)
       
       Solution:
@@ -61,9 +55,7 @@ Easy to Medium(1751,1741,1693,1393)
                   // CASE - END; WHEN THEN, ELSE.
                   // See more syntax in: https://www.w3schools.com/sql/func_mysql_case.asp
 
-5. 1795
-
-      Qestion:
+5. 1795      Qestion:
       rearrange the table, use of Union and PIVOT
       将不同的列名放入同一列()
       
