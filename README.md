@@ -96,8 +96,8 @@ Easy to Medium(1751,1741,1693,1393)
             SELECT
             (SELECT DISTINCT salary 
             FROM Employee 
-            ORDER BY salary 
-            DESC LIMIT 1, 1)
+            ORDER BY salary DESC
+            LIMIT 1, 1)
             AS SecondHighestSalary;
                         // 主要 AS 语法正确。在中间使用 从句
                         // DISTINCT - 每一个计数; 100, 100 = 2 items
@@ -105,7 +105,24 @@ Easy to Medium(1751,1741,1693,1393)
                                              LIMIT 0,1 = NO.1, 1
                         // LIMIT 3 = 选择 3 项
 
+7. 177 n-th highest
 
+      Solution:
+      
+      CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
+      BEGIN
+          SET N = N-1;        // Fix the Index
+          RETURN (
+            # Write your MySQL query statement below.
+              SELECT DISTINCT salary
+              FROM Employee
+              ORDER BY salary DESC
+              LIMIT N, 1
+                              // just like the one above: DISTINCT/ DESC/ LIMIT
+                              // LIMIT N, 1 = LIMIT 1 OFFSET N (offset = starts with; limit = how many)
+                              
+        );
+      END
 
 
 
