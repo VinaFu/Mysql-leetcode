@@ -29,7 +29,7 @@ Easy to Medium(1751,1741,1693,1393)
                         // 同样参数用GROUP BY放在一起。
                         // 见12-13章内容
 
-3. 1699
+3. 1693
 
       Question:
       建表命名，计数 + 不重复计数（null）；分别计数；排序
@@ -43,6 +43,28 @@ Easy to Medium(1751,1741,1693,1393)
                         // 计数：count；非重复： distinct; 用了distinct不能用count(*)
                         // 顺序：group > order
 
-4. 
+4. 1393
+
+      Question:
+      建表命名, 数学用法. CASE 运行算法 (遇到“buy”转为负数)
+      
+      Solution:
+      
+            SELECT stock_name, SUM(
+                CASE 
+                    WHEN operation = 'buy' THEN -price
+                    ELSE price
+                END
+            ) AS capital_gain_loss
+            FROM Stocks
+            GROUP BY stock_name;
+                  // meet "buy" changes it into -; then sum, so the CASE is inside the SUM
+                  // CASE - END; WHEN THEN, ELSE.
+                  // See more syntax in: https://www.w3schools.com/sql/func_mysql_case.asp
+5. 
+
+
+
+
 
 
