@@ -59,12 +59,39 @@ Easy to Medium(1751,1741,1693,1393)
             FROM Stocks
             GROUP BY stock_name;
                   // meet "buy" changes it into -; then sum, so the CASE is inside the SUM
+                  // can be used in any position, where/ group by/ select, etc.
                   // CASE - END; WHEN THEN, ELSE.
                   // See more syntax in: https://www.w3schools.com/sql/func_mysql_case.asp
-5. 
 
+5. 1795
 
+      Qestion:
+      rearrange the table, use of Union and PIVOT
+      将不同的列名放入同一列()
+      
+      Solution:
+      
+      5.1 Union:
+            SELECT product_id, 'store1' AS store, store1 AS price 
+            FROM Products 
+            WHERE store1 IS NOT NULL
+            UNION 
+            SELECT product_id, 'store2' AS store, store2 AS price 
+            FROM Products 
+            WHERE store2 IS NOT NULL
+            UNION 
+            SELECT product_id, 'store3' AS store, store3 AS price 
+            FROM Products 
+            WHERE store3 IS NOT NULL
+            ORDER BY product_id, store;
 
-
+      5.2 PIVOT:
+            SELECT product_id,store,price
+            FROM Products
+            UNPIVOT
+            (
+                  price
+                  FOR store in (store1,store2,store3)
+            ) AS T
 
 
