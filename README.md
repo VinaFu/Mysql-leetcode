@@ -56,12 +56,10 @@ Easy to Medium(1751,1741,1693,1393)
                   // See more syntax in: https://www.w3schools.com/sql/func_mysql_case.asp
 
 5. 1795      Qestion:
-      rearrange the table, use of Union and PIVOT
-      将不同的列名放入同一列()
+      重新排列表格:
+      将不同的列名放入同一列(); use of Union
       
       Solution:
-      
-      5.1 Union:
       
             SELECT product_id, 'store1' AS store, store1 AS price 
             FROM Products 
@@ -75,15 +73,11 @@ Easy to Medium(1751,1741,1693,1393)
             FROM Products 
             WHERE store3 IS NOT NULL
             ORDER BY product_id, store;
+                        // "store1", 将一项放入新列
+                        // store1 AS price, 将值放入另一列
+                        // UNION 运算符用于组合两个或多个 SELECT 语句的结果集。最后一个不要UNION
+                        // 因为终表剔除了null值，所以 WHERE store1/2/3 IS NOT NULL
 
-      5.2 PIVOT:
       
-            SELECT product_id,store,price
-            FROM Products
-            UNPIVOT
-            (
-                  price
-                  FOR store in (store1,store2,store3)
-            ) AS T
 
 
