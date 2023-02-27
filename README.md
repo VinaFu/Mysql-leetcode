@@ -72,6 +72,7 @@ Easy to Medium(1751,1741,1693,1393)
       Solution:
       
       5.1 Union:
+      
             SELECT product_id, 'store1' AS store, store1 AS price 
             FROM Products 
             WHERE store1 IS NOT NULL
@@ -86,6 +87,7 @@ Easy to Medium(1751,1741,1693,1393)
             ORDER BY product_id, store;
 
       5.2 PIVOT:
+      
             SELECT product_id,store,price
             FROM Products
             UNPIVOT
