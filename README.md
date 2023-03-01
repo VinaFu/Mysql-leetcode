@@ -124,5 +124,16 @@ Easy to Medium(1751,1741,1693,1393)
         );
       END
 
+8. 1532 Filter 见第 8-9 章
+
+      SELECT patient_id, patient_name, conditions     // SELECT * = select all
+      FROM Patients
+      WHERE conditions LIKE 'DIAB1%'
+      OR conditions LIKE '% DIAB1%';                  // 不同查询需要复制全
+
+9. 
+
+
+
 
 
