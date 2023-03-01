@@ -109,17 +109,17 @@ Easy to Medium(1751,1741,1693,1393)
 
       Solution:
       
-      CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
-      BEGIN
-          SET N = N-1;        // Fix the Index
-          RETURN (
-            # Write your MySQL query statement below.
-              SELECT DISTINCT salary
-              FROM Employee
-              ORDER BY salary DESC
-              LIMIT N, 1
-                              // just like the one above: DISTINCT/ DESC/ LIMIT
-                              // LIMIT N, 1 = LIMIT 1 OFFSET N (offset = starts with; limit = how many)
+            CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
+            BEGIN
+                SET N = N-1;        // Fix the Index
+                RETURN (
+                  # Write your MySQL query statement below.
+                    SELECT DISTINCT salary
+                    FROM Employee
+                    ORDER BY salary DESC
+                    LIMIT N, 1
+                                    // just like the one above: DISTINCT/ DESC/ LIMIT
+                                    // LIMIT N, 1 = LIMIT 1 OFFSET N (offset = starts with; limit = how many)
                               
         );
       END
@@ -128,10 +128,10 @@ Easy to Medium(1751,1741,1693,1393)
       
       Solution:
       
-      SELECT patient_id, patient_name, conditions     // SELECT * = select all
-      FROM Patients
-      WHERE conditions LIKE 'DIAB1%'
-      OR conditions LIKE '% DIAB1%';                  // 不同查询需要复制全
+            SELECT patient_id, patient_name, conditions     // SELECT * = select all
+            FROM Patients
+            WHERE conditions LIKE 'DIAB1%'
+            OR conditions LIKE '% DIAB1%';                  // 不同查询需要复制全
 
 9. [197]  !! 见第 16 章 !!
       w1 w2; DATEDIFF() 
@@ -139,9 +139,9 @@ Easy to Medium(1751,1741,1693,1393)
       
       Solution:
       
-      SELECT w2.id                              // 2nd
-      FROM Weather w1, Weather w2               //  分成两个表
-      WHERE w2.temperature > w1.temperature AND DATEDIFF(w2.recordDate, w1.recordDate) = 1;
-                                                // interval = 1
+            SELECT w2.id                              // 2nd
+            FROM Weather w1, Weather w2               //  分成两个表
+            WHERE w2.temperature > w1.temperature AND DATEDIFF(w2.recordDate, w1.recordDate) = 1;
+                                                      // interval = 1
 
 
