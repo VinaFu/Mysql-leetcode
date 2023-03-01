@@ -117,12 +117,10 @@ Easy to Medium(1751,1741,1693,1393)
                     SELECT DISTINCT salary
                     FROM Employee
                     ORDER BY salary DESC
-                    LIMIT N, 1
+                    LIMIT N, 1  );
                                     // just like the one above: DISTINCT/ DESC/ LIMIT
-                                    // LIMIT N, 1 = LIMIT 1 OFFSET N (offset = starts with; limit = how many)
-                              
-        );
-      END
+                                    // LIMIT N, 1 = LIMIT 1 OFFSET N (offset = starts with; limit = how many)   
+            END
 
 8. 1532 Filter 见第 8-9 章
       
@@ -143,5 +141,16 @@ Easy to Medium(1751,1741,1693,1393)
             FROM Weather w1, Weather w2               //  分成两个表
             WHERE w2.temperature > w1.temperature AND DATEDIFF(w2.recordDate, w1.recordDate) = 1;
                                                       // interval = 1
+10. [180] 在表内进行比较, see above
+      非常好，但必须比较它们中的每一个,确保存在 = 很多 AND; 别忘DISTINCT
+      
+      Solution:
+      
+            SELECT DISTINCT z.num AS ConsecutiveNums
+            FROM Logs x, Logs y, Logs z 
+            WHERE x.num = y.num AND x.num = z.num AND z.id - y.id = 1 AND y.id - x.id = 1;
 
+11. 181+ 608 + 601
+
+11. 262?? - hard
 
