@@ -37,7 +37,7 @@ Easy to Medium(1751,1741,1693,1393)
                         // 计数：count；非重复： distinct; 用了distinct不能用count(*)
                         // 顺序：group > order
 
-4. 1393      Question:
+4. [1393]      Question:
       建表命名, 数学用法. CASE 运行算法 (遇到“buy”转为负数)
       
       Solution:
@@ -55,7 +55,7 @@ Easy to Medium(1751,1741,1693,1393)
                   // CASE - END; WHEN THEN, ELSE.
                   // See more syntax in: https://www.w3schools.com/sql/func_mysql_case.asp
 
-5. 1795      Qestion:
+5. [1795]      Qestion:
       重新排列表格:
       将不同的列名放入同一列(); use of Union
       
@@ -78,7 +78,7 @@ Easy to Medium(1751,1741,1693,1393)
                         // UNION 运算符用于组合两个或多个 SELECT 语句的结果集。最后一个不要UNION
                         // 因为终表剔除了null值，所以 WHERE store1/2/3 IS NOT NULL
 
-6. 176 Question: 选择第二大值
+6. [176] Question: 选择第二大值
 
       Solution:
       
