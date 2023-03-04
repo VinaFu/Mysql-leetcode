@@ -150,7 +150,15 @@ Easy to Medium(1751,1741,1693,1393)
             FROM Logs x, Logs y, Logs z 
             WHERE x.num = y.num AND x.num = z.num AND z.id - y.id = 1 AND y.id - x.id = 1;
 
-11. 181+ 608 + 601
+11. 181 很好，表明key之间的关系
+
+      Solution:
+      
+            SELECT x.name AS Employee
+            FROM Employee x, Employee y
+            WHERE x.salary > y.salary AND y.id = x.managerId;
+            
+13. 608 + 601
 
 11. 262?? - hard
 
