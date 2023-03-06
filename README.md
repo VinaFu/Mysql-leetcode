@@ -158,7 +158,38 @@ Easy to Medium(1751,1741,1693,1393)
             FROM Employee x, Employee y
             WHERE x.salary > y.salary AND y.id = x.managerId;
             
-13. 608 + 601
+12. 601 很好，这个id的rotation不错,所以id没有specified分配。并记住使用 *
+
+      Solution:
+            
+            12.1:
+            SELECT x.id, x.visit_date, x.people
+            FROM Stadium x, Stadium y, Stadium z
+            WHERE z.id - y.id = 1 AND y.id - x.id = 1 AND x.people >= 100 AND y.people >= 100 AND z.people >= 100
+            Union
+            SELECT y.id, y.visit_date, y.people
+            FROM Stadium x, Stadium y, Stadium z
+            WHERE z.id - y.id = 1 AND y.id - x.id = 1 AND x.people >= 100 AND y.people >= 100 AND z.people >= 100
+            Union
+            SELECT z.id, z.visit_date, z.people
+            FROM Stadium x, Stadium y, Stadium z
+            WHERE z.id - y.id = 1 AND y.id - x.id = 1 AND x.people >= 100 AND y.people >= 100 AND z.people >= 100
+            ORDER BY id;
+            
+            12.2:
+            SELECT DISTINCT x.*
+            FROM Stadium x, Stadium y, Stadium z
+            WHERE x.people >= 100 AND y.people >= 100 AND z.people >= 100 AND (
+                z.id - y.id = 1 AND y.id - x.id = 1 
+                OR
+                x.id - z.id = 1 AND z.id - y.id = 1
+                OR
+                y.id - x.id = 1 AND x.id - z.id = 1
+            )
+            ORDER BY x.id;
+
+
+608 
 
 11. 262?? - hard
 
